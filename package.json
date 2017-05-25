@@ -1,0 +1,28 @@
+{
+  "name": "leo",
+  "version": "1.0.0",
+  "description": "a tool for checking whether es6 is in your old jquery code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanner-sun/leo.git"
+  },
+  "keywords": [
+    "tool",
+    "es6",
+    "jquery",
+    "ie"
+  ],
+  "author": "leo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tanner-sun/leo/issues"
+  },
+  "homepage": "https://github.com/Tanner-sun/leo#readme",
+  "dependencies": {
+    "log4js": "^1.1.1"
+  }
+}
