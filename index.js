@@ -22,6 +22,7 @@ var REG = {
 	LET : /\blet\b/,
 	CONST: /\bconst\b/,
 	AWAIT: /\bawait\b/,
+	INCLUDES: /\.includes/,
 }
 
 function pathWalk(path, floor, cb) {  
