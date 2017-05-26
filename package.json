@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "a tool for checking whether es6 is in your old jquery code",
   "main": "index.js",
+  "bin": {
+    "leo":"index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

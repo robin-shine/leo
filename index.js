@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 'use strict'
 
 var fs = require('fs');
@@ -5,12 +7,13 @@ var log4js = require('log4js');
 var path = require('path');
 var os = require('os');
 
-var DIR = path.resolve(__dirname, './test');
+var testDir = process.argv[2] || 'src';
+var DIR = path.resolve(process.cwd(), './' + testDir);
 var THREAD_NUM = os.cpus().length;
 
 var logger = log4js.getLogger();
-logger.log('目前检测的文件夹路径为：');
-logger.log(DIR);
+logger.warn('目前检测的文件夹路径为：');
+logger.warn(DIR);
 
 function getFullPath(dir, files) {
   return files.map(function (f) {
@@ -23,6 +26,7 @@ var REG = {
 	CONST: /\bconst\b/,
 	AWAIT: /\bawait\b/,
 	INCLUDES: /\.includes/,
+	OBJ_Deconstruct: /.*\{\s*(\w*|\{\s*\w*\s*\})\s*\}\s*\=\s*\w*/,
 }
 
 function pathWalk(path, floor, cb) {  
