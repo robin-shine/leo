@@ -74,7 +74,10 @@ function checkES6 (dataString, path) {
 			logger.warn(key);
 			logger.warn('ES6代码所在文件名为:');
 			logger.warn(path)
-		} 
+		} else {
+			logger.info('恭喜，当前文件夹内没有ES6语法');
+			logger.info('检查仅局限于let,const,await,includes, simple object deconstruct');
+		}
 	}
 }
 
