@@ -66,18 +66,21 @@ function handleFile(path, floor) {
 }
 
 function checkES6 (dataString, path) {
+	var checkResult = true;
 	for (var key in REG) {
 		var isWithES6 = REG[key].test(dataString);
 		if (isWithES6) {
+			checkResult = false;
 			logger.warn('代码中包含ES6代码!!!');
 			logger.warn('ES6语法代码为:');
 			logger.warn(key);
 			logger.warn('ES6代码所在文件名为:');
 			logger.warn(path)
-		} else {
-			logger.info('恭喜，当前文件夹内没有ES6语法');
-			logger.info('检查仅局限于let,const,await,includes, simple object deconstruct');
 		}
+	}
+	if (checkResult) {
+		logger.info('恭喜，当前文件夹内没有ES6语法');
+		logger.info('检查仅局限于let,const,await,includes, simple object deconstruct');
 	}
 }
 
